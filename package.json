@@ -1,0 +1,15 @@
+{
+    "name": "portfolio-root",
+    "version": "1.0.0",
+    "description": "Root script to run full stack portfolio",
+    "private": true,
+    "scripts": {
+        "setup": "npm install && npm install --prefix frontend && npm install --prefix backend",
+        "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+        "build": "npm run build --prefix frontend",
+        "start": "npm run dev"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
