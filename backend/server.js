@@ -1,7 +1,11 @@
+import dns from "dns";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+
+// Windows/ISP DNS often blocks SRV lookups; Google DNS fixes Atlas mongodb+srv resolution
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 import projectsRoute from "./routes/projects.js";
 import contactRoute from "./routes/contact.js";
